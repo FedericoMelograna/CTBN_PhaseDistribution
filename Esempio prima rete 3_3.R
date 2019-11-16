@@ -1,0 +1,56 @@
+matrice33<-matrix(c(-1,0.7,0.3,0,0,0,0,0,0,
+                    1.8,-3,1.2,0,0,0,0,0,0,
+                    3,6,-10,0.5,0,0,0.5,0,0,
+                    0,0,0,-2,1.4,0.6,0,0,0,
+                    0,0,0,2.7,-5,2.3,0,0,0,
+                    2.1,0,0,4,7,-15,1.9,0,0,
+                    0,0,0,0,0,0,-0.5,0.26,0.24,
+                    0,0,0,0,0,0,0.1,-0.3,0.2,
+                    1.5,0,0,3.5,0,0,13,12,-30),ncol=9,byrow=T)
+matrice33<-directnames(matriced=matrice33,k_int=3,N_int = 3)
+matrice33
+amalgamataH_X(k=3,N=3,matrice=matrice33)
+aaaaa=amalgamataX_H(k=3,N=3,matrice=matrice33)
+QX_Htotale(k=3,N=3,matrice=matrice33)
+N=3
+
+
+funz_quartopuntoqhlhm_x<-function(K,N,j){
+  ##funzione che mi serve per quarto punto, sia apri che dispari
+  #della matrice QH|X
+  v=funz_v(K) #ordinamento
+  c<-0
+  s<-vector()
+  for (l in (N+1):(N+v)){
+    a=QX_l(K=K,N=N,l=l) ##rifaccio al contrario passo QX|Hl con l>N
+    #per ogni l>N 
+    # print(a)
+    # print(l)
+    if (Inf %in% a[,j]){
+      #se in tale matrice,alla j-esima colonna, è presente un Inf, 
+      ##allora scrivo tale l nel mio vettore s 
+      c<-c+1
+      s[c]<-l
+    }
+    
+  }
+  ifelse(length(s)>0,return(s),return(FALSE))
+  ##controllo per restituire sempre qualcosa di diverso dall'insieme vuoto. 
+} 
+  
+asso<-funz_quartopuntoqhlhm_x(K=3,N=3,j=2)
+if (5 %in% asso){
+  print("ciao")
+}
+#esempi
+funz_quartopuntoqhlhm_x(3,3,1) #[1] 5
+funz_quartopuntoqhlhm_x(3,3,2) #[1] FALSE
+funz_quartopuntoqhlhm_x(3,3,3) #[1] 4
+
+funz_quartopuntoqhlhm_x(4,3,4) #[1] 6
+funz_quartopuntoqhlhm_x(5,3,5) #[1] 6 10
+
+
+funzioneordinamento(k=6)
+funzioneordinamento(k=4)
+

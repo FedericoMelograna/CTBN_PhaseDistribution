@@ -27,7 +27,7 @@ funz_quartopuntoqhlhm_x<-function(K,N,j){
     # print(a)
     # print(l)
     if (Inf %in% a[,j]){
-      #se in tale matrice,alla j-esima colonna, è presente un Inf, 
+      #se in tale matrice,alla j-esima colonna, Ã¨ presente un Inf, 
       ##allora scrivo tale l nel mio vettore s 
       c<-c+1
       s[c]<-l

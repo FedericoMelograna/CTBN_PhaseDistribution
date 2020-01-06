@@ -1,3 +1,5 @@
+###New libraries structurations far more efficient and Bug Fixing
+
 
 # Strutturazione alternativa QH|X -----------------------------------------
 
@@ -5,7 +7,7 @@
 QH_Xpari<-function(N,K,v,va,j,mm){
   va=1
   
-  ##Funzione che computa QH|xj, quando l'indice della x, j, è PARI. 
+  ##Funzione che computa QH|xj, quando l'indice della x, j, Ã¨ PARI. 
   ###prende in input, N,K #di stati rispettivamente di H e X, 
   ### v, va transizioni non allowate totali, e transizioni non allowate 
   ### all'interno del gruppo A (quello dispari.) (IN QUANTO andra ad agire da N+va fino a N+v)
@@ -94,7 +96,7 @@ QH_Xpari<-function(N,K,v,va,j,mm){
 
 QH_Xdispari<-function(N,K,v,va,j,mm){
   va=v
-  ##Funzione che computa QH|xj, quando l'indice della x, j, è dispari. 
+  ##Funzione che computa QH|xj, quando l'indice della x, j, Ã¨ dispari. 
   ###prende in input, N,K #di stati rispettivamente di H e X, 
   ### v, va transizioni non allowate totali, e transizioni non allowate 
   ### all'interno del gruppo A (quello dispari.)
@@ -113,7 +115,7 @@ QH_Xdispari<-function(N,K,v,va,j,mm){
         tempo=0
         for (u in 1:K){
           tempo<-tempo+ifelse(u%%2==0,mm[paste0(N,"_",j),paste0(1,"_",u)],0)
-          ##ciclo che mi porta dentro la somma quando u è pari
+          ##ciclo che mi porta dentro la somma quando u Ã¨ pari
           # print(tempo)
           
         }
@@ -128,8 +130,8 @@ QH_Xdispari<-function(N,K,v,va,j,mm){
         
         
       } else if(l==N & m>N & m<=N+va ){
-        if( ff[ff$ris==abs((m-N)),1]==j){ #ho messo un if dentro poichè altrimenti 
-          #dava errore che ci sono casi dove la chiamata dell'if è indefinita (out of bounds)
+        if( ff[ff$ris==abs((m-N)),1]==j){ #ho messo un if dentro poichÃ¨ altrimenti 
+          #dava errore che ci sono casi dove la chiamata dell'if Ã¨ indefinita (out of bounds)
           a=ff[ff$ris==(m-N),1]
           b=ff[ff$ris==abs((m-N)),2]
           # print(a)

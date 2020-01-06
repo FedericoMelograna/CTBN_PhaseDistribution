@@ -21,7 +21,7 @@ Mx
 thetaxxprimo<-MEtotale/Mx #teoricamente dovrebbero anche esserci le condizioni giuste
 
 round(thetaxxprimo,2)
-#questa parte qua è giusta, sono sbagliate le funzioni!!!
+#questa parte qua Ã¨ giusta, sono sbagliate le funzioni!!!
 #prove
 diag(x)
 x=matrix(c(2,5,23,45),ncol=2)

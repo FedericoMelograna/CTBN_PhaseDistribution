@@ -3,7 +3,7 @@ k=4
 Nv=7
 df=df+0.01
 #storie di prova
-# df2 Ë df con max 100
+# df2 √® df con max 100
 sigmaosservato1=data.frame(stato=c(1,3,2,1,3,4,1,3,1),inizio=c(0,0.5,0.9,1.3,1.5,1.9,2.2,2.5,2.7),
                            fine=c(0.5,0.9,1.3,1.5,1.9,2.2,2.5,2.7,3))
 
@@ -20,7 +20,7 @@ library("expm", lib.loc="~/R/win-library/3.4")
 
 # computare alphax e betat ------------------------------------------------
 
-#inizializzo a caso beta con la probabilit‡ di trovarsi negli stadi. 
+#inizializzo a caso beta con la probabilit√† di trovarsi negli stadi. 
 ##con #di stadi pari al numero totale di stadi 
 # (K*(n+v))
 #supponiamo passa da stato 1 a 2 a 0.7 
@@ -119,8 +119,8 @@ alphaprovazero=rep(0,k*Nv); alphaprovazero[8:15]<-1/k*Nv
 #       [,26] [,27] [,28]
 # [1,]     0     0     0
 
-#alph Ë naturalmente 1*28
-#varie prove di dimensionalit‡
+#alph √® naturalmente 1*28
+#varie prove di dimensionalit√†
 alphatpiu1(alpha0,Qsi=Qsip,ti1=0.7,ti0=0,Qsi0_si1 = Qsi0si1prova)
 df;str(df);str(expm(df*0.7));str(alpha0)
 df<-as.matrix(df)
@@ -143,18 +143,18 @@ betatif<-function(betat1,Qsi,ti1,ti0,Qsi0_si1){
 }
 
 #prove
-#come fosse beta2.7--> stato nuovo Ë1, quindi Qsip
+#come fosse beta2.7--> stato nuovo √®1, quindi Qsip
 (beta_taumeno1=betatif(betatau,Qsi=Qsip,ti1=3,ti0=2.7,Qsi0_si1 = Qsi0_3si1_1prova))
 (beta_taumeno2=betatif(beta_taumeno1,Qsi=Qsiprova,ti1=2.7,ti0=2.5,Qsi0_si1=Qsi0si1prova))
 round(t(beta_taumeno1),2)
-#Ë assurdo avere una probabilit‡ amggiore di 1!
+#√® assurdo avere una probabilit√† amggiore di 1!
 # > round(t(beta_taumeno1),2)
 # [,1] [,2] [,3] [,4] [,5] [,6] [,7] [,8] [,9] [,10] [,11] [,12] [,13] [,14] [,15] [,16] [,17]
 # [1,]    0    0    0    0    0    0    0    0    0     0     0     0  0 0  0.15  0.15    0.15
 #      [,18]  [,19]   [,20] [,21] [,22] [,23] [,24] [,25] [,26] [,27] [,28]
 # [1,] 0.15 104010.7  0.15  0.15     0     0     0     0     0     0     0
 #vediamo che escono con proababilita maggiore di zero solo gli appartenentei al terzo sottosistema 
-##con PROB altissima se Ë 19, per via della TRANSIZIONE IMMEDIATA in 19
+##con PROB altissima se √® 19, per via della TRANSIZIONE IMMEDIATA in 19
 
 
 
@@ -165,7 +165,7 @@ dim(beta_taumeno1)
 dim(expm(Qsiprova*(0.7))%*%t(betatau))
 dim(betatau)
 betatau
-#beta Ë 28*1 va bene???? anche se NON so bene perche!
+#beta √® 28*1 va bene???? anche se NON so bene perche!
 
 #computa alpha(t+1)-
 alphatpiu1meno<-function(alphat,Qsi,ti1,ti0){
@@ -186,9 +186,9 @@ round(alpha1,2)
 # [,17] [,18] [,19] [,20] [,21] [,22] [,23] [,24] [,25] [,26] [,27] [,28]
 # [1,]  0.04  0.04  0.04  0.04  0.04  0.04  0.04  0.04  0.04  0.04  0.04  0.04
 
-#vediamo che anche da qua si vede come senza la transizione, la probabilita Ë positiva SOLO
+#vediamo che anche da qua si vede come senza la transizione, la probabilita √® positiva SOLO
 #prima della transizione. alphat-=P[xt-=i E sigma o:t]
-##quindi vuole dire che Ë GIUSTO alpha non diffuso
+##quindi vuole dire che √® GIUSTO alpha non diffuso
 dim(alpha1)
 
 
@@ -200,11 +200,11 @@ betatifpiu<-function(betat1,Qsi,ti1,ti0){ #P[sigmat:tau | Xt+=i]
   return(betat0)
 }
 
-#prove #Qsip Ë ancora una matrice in 1 come stato
+#prove #Qsip √® ancora una matrice in 1 come stato
 (betataumeno1meno=betatifpiu(betatau,Qsi=Qsip,ti1=3,ti0=2.7))
 (betataumeno2piu=betatifpiu(beta_taumeno1,Qsi=Qsiprova,ti1=2.7,ti0=2.4))
 #vediamo pero che toglie tutti i numeri= ad 1 con il passaggio rpima invece
-#Ë come se al posto che farmi una evidenza diffusa facesse un point evidence. 
+#√® come se al posto che farmi una evidenza diffusa facesse un point evidence. 
 
 # Problema: qunado mi esponenzializza una matrice con degli zeri ----------
 ##### mi tornano 1!!!
@@ -358,14 +358,14 @@ round(betacmfgn[,9],5)
 beta_taumeno1
 round(betacmfgn[,8],5)
 beta_taumeno2
-#la funzione Ë uguale alle singole... il problema Ë altrove!!
+#la funzione √® uguale alle singole... il problema √® altrove!!
 
 beta;sigmaosservato1
 
 
 # alpha cumulata ----------------------------------------------------------
-##NNB per noi ti+1 Ë il fine, altrimenti 
-##NB alpha1 Ë in corrispondenza di quando ho osservato la prima transizione
+##NNB per noi ti+1 √® il fine, altrimenti 
+##NB alpha1 √® in corrispondenza di quando ho osservato la prima transizione
 alphacumulatofn<-function(matrice,storia,Nv,k ){
   #computa alpha da 0 (inizializzata da Po che non conosco), finisco a tau-1
   alpha0<-rep(0.5,k*Nv) #alphao

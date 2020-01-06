@@ -1,3 +1,6 @@
+####Functions for Learning Parameters
+
+
 # FINITA PARTE DI ET, con una singola sigma -------------------------------
 ###manca fare la media su tutte le transizioni, e poi la costante p(sigma0:t)
 
@@ -6,7 +9,7 @@
 # parte Expected number of transition -------------------------------------
 
 
-###SI divide in due parti, prima è dove non ci sono transizioni, seconda le transizioni!
+###SI divide in due parti, prima Ã¨ dove non ci sono transizioni, seconda le transizioni!
 
 
 # per farlo devo computare la lista di alpha- e beta+ da 1 a 8  -----------
@@ -96,7 +99,7 @@ alfatotmeno[1:8,] #ci sono solamente 8 colonne, da alpha 1 a alpha 8, come 8 son
 
 
 ##nb per i nostri scopi, usare betacumulatononalt, oppure betacumulatofn( che non computa beta0)
-#è la stesa cosa, in quanto non siamo interessati veramente a uare beta0
+#Ã¨ la stesa cosa, in quanto non siamo interessati veramente a uare beta0
 # betatifpiu<-function(betat1,Qsi,ti1,ti0){
 #   
 #   
@@ -135,7 +138,7 @@ beta_globale_piu<-function(matrice,storia,Nv,k ){
                               ,ti0= ti0 )
     ###nella posizioni i-esima sto computando beta(i-1)
     
-    ##nb sembra tutto giusto ma bisognera riscalare i beta. in beta9 ci sara quello che è beta
+    ##nb sembra tutto giusto ma bisognera riscalare i beta. in beta9 ci sara quello che Ã¨ beta
   } 
 
   return(betacumulato[,-c(1,ncol(betacumulato))])
@@ -147,7 +150,7 @@ beta_globale_piu<-function(matrice,storia,Nv,k ){
 sigmaosservato1
 bbb=beta_globale_piu(matrice=df,storia=sigmaosservato1,Nv=7,k=4)
 bbb
-##teoricamente adesso è a posto bene!
+##teoricamente adesso Ã¨ a posto bene!
 
 
 storia
@@ -189,7 +192,7 @@ dim(Deltajk)
 dim(betapiu)
 
 
-##dovrebbe essere giusta questa sommatoria che è il primo membro. per un singolo j,k
+##dovrebbe essere giusta questa sommatoria che Ã¨ il primo membro. per un singolo j,k
 
 
 ##NB MANCA QJK

@@ -72,8 +72,8 @@ Funz_tuttex(k=4,N=3)
 Funz_tuttex(k=2,N=2)
 #per il mio esempio della 2*2
 
-##NB le matrici X|Hi non sono influenzati dai dati, dalle intensti‡ interne alle matrici, 
-#ma sono bensÏ fisse, dati numero di hidden state e di shallow state. 
+##NB le matrici X|Hi non sono influenzati dai dati, dalle intensti√† interne alle matrici, 
+#ma sono bens√¨ fisse, dati numero di hidden state e di shallow state. 
 
 
 

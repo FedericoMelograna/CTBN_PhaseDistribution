@@ -17,7 +17,7 @@ funzioneAM_QH_X<-function(k,N,matriceam){
           tempo=0
           for (u in 1:(N+v)){
             tempo<-tempo-ifelse(u!=i,matriceam[(l-1)*(N+v)+i,(l-1)*(N+v)+u],0)
-            ##ciclo che mi porta dentro la somma quando u è pari
+            ##ciclo che mi porta dentro la somma quando u Ã¨ pari
             # print(tempo)
           print(c(i,j,l))
           }
@@ -62,7 +62,7 @@ funzioneAM_QX_H<-function(k,N,matriceam){
             print(c(i,j,l,u))
                   
             tempo<-tempo-ifelse(u!=i,matriceam[(i-1)*(N+v)+l,(u-1)*(N+v)+l],0)
-            ##ciclo che mi porta dentro la somma quando u è pari
+            ##ciclo che mi porta dentro la somma quando u Ã¨ pari
             print(tempo)
             
           }

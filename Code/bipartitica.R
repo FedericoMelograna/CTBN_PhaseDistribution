@@ -46,7 +46,7 @@ QX_h1(K=4,N=3,mm=mm)
 # matrice bipartitica dato hN ---------------------------------------------
 
 QX_hN<-function(K,N,mm){
-  ###altro caso particolare è la matrice QX|Hn, anche in questo caso input sono K,N e 
+  ###altro caso particolare Ã¨ la matrice QX|Hn, anche in questo caso input sono K,N e 
   ###la matrice in forma diretta. Restituisce una matrice K*K. 
 matrice=matrix(NA,ncol=K,nrow=K)
 for (i in 1:K){
@@ -77,7 +77,7 @@ QX_hN(K=4,N=3,mm=mm)
 
 QX_h0<-function(K,N=1,mm=matrix(c(-1,1,0,0,1,-2,1,0,0,0,-0.5,0.5,0.6,0,0.4,-1),ncol=4,byrow=T)
 ){##matrice vuota di zeri quando l sta tra 1 e N 
-  #dovrei cambiare input: non mi serve a niente avere una matrice. Anche N è tralasciabile 
+  #dovrei cambiare input: non mi serve a niente avere una matrice. Anche N Ã¨ tralasciabile 
   return(matrice=matrix(0,ncol=K,nrow=K))
   
 }
@@ -146,7 +146,7 @@ funzioneordinamento<-function(k){
 
 # PUNTO IMPORTANTE DA CONTROLLARE CON IL PROFESSORE -----------------------
 
-#QUESTO ORDINAMENTO è CORRETTO?
+#QUESTO ORDINAMENTO Ã¨ CORRETTO?
 funzioneordinamento(k=5)
 
 #   prim sec ris
@@ -271,7 +271,7 @@ N=3
 va=2
 
 QH_Xdispari<-function(N,K,v,va,j,mm){
-  ##Funzione che computa QH|xj, quando l'indice della x, j, è dispari. 
+  ##Funzione che computa QH|xj, quando l'indice della x, j, Ã¨ dispari. 
   ###prende in input, N,K #di stati rispettivamente di H e X, 
   ### v, va transizioni non allowate totali, e transizioni non allowate 
   ### all'interno del gruppo A (quello dispari.)
@@ -290,7 +290,7 @@ QH_Xdispari<-function(N,K,v,va,j,mm){
         tempo=0
         for (u in 1:K){
           tempo<-tempo+ifelse(u%%2==0,mm[paste0(N,"_",j),paste0(1,"_",u)],0)
-          ##ciclo che mi porta dentro la somma quando u è pari
+          ##ciclo che mi porta dentro la somma quando u Ã¨ pari
           # print(tempo)
           
         }
@@ -305,8 +305,8 @@ QH_Xdispari<-function(N,K,v,va,j,mm){
         
         
       } else if(l==N & m>N & m<=N+va ){
-        if( ff[ff$ris==abs((m-N)),1]==j){ #ho messo un if dentro poichè altrimenti 
-          #dava errore che ci sono casi dove la chiamata dell'if è indefinita (out of bounds)
+        if( ff[ff$ris==abs((m-N)),1]==j){ #ho messo un if dentro poichÃ¨ altrimenti 
+          #dava errore che ci sono casi dove la chiamata dell'if Ã¨ indefinita (out of bounds)
           a=ff[ff$ris==(m-N),1]
           b=ff[ff$ris==abs((m-N)),2]
           # print(a)
@@ -386,7 +386,7 @@ va=2
 
 QH_Xpari<-function(N,K,v,va,j,mm){
   
-  ##Funzione che computa QH|xj, quando l'indice della x, j, è PARI. 
+  ##Funzione che computa QH|xj, quando l'indice della x, j, Ã¨ PARI. 
   ###prende in input, N,K #di stati rispettivamente di H e X, 
   ### v, va transizioni non allowate totali, e transizioni non allowate 
   ### all'interno del gruppo A (quello dispari.) (IN QUANTO andra ad agire da N+va fino a N+v)
@@ -479,7 +479,7 @@ QH_Xpari(N=3,K=4,v=4,va=2,j=4,mm=mm)
 
 Funz_tutteh=function(k,N,matrice){
   ###combina il pari e dispari di prima per creare un array, 
-  # di dimensioni N+v, N+v, k, dove ogni elemento n+v*n+v è una matrice
+  # di dimensioni N+v, N+v, k, dove ogni elemento n+v*n+v Ã¨ una matrice
   ## QH|xj. 
   ## input: k,N soliti e la matrice in forma diretta
   va<-funz_va(k_int=k)

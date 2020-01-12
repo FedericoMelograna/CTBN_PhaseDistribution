@@ -1,1 +1,1 @@
-Slides and the the dissertation of my Thesis. 
+Presentation slide and final thesis

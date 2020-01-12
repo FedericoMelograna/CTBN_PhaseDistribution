@@ -1,1 +1,1 @@
-The whole ensemble of file nad libraries which enables to create a Continuous time Bayesian Network
+The whole ensemble of file and libraries which enables to create, train and evaluate a Continuous time Bayesian Network with phase distribution.
